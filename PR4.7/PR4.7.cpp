@@ -27,17 +27,17 @@ int main()
 	while (x <= xk)
 	{
 		n = 0;
-		a = 2 * (1. / x);
+		a = 1. / x;
 		S = a;
 		do {
 			n++;
-			R = 2 * ((2 * n - 1 * 1.) / ((x * x) * (2 * n + 1)));
+			R = (2 * n - 1 * 1.) / ((x * x) * (2 * n + 1));
 			a *= R;
 			S += a;
 		} while (abs(a) >= eps);
 		cout << "|" << setw(7) << setprecision(2) << x << " |"
 			<< setw(15) << setprecision(2) << log((x + 1 * 1.) / (x - 1)) << " |"
-			<< setw(10) << setprecision(2) << S << " |"
+			<< setw(10) << setprecision(2) << S * 2 << " |"
 			<< setw(10) << n << " |"
 			<< endl;
 		x += dx;
